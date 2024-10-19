@@ -1,0 +1,73 @@
+SQL
+
+
+
+1) command to create a new table with 5 columns
+
+
+Create table Bank(
+bank_id int ,
+bank_name varchar(30),
+bank_code int,
+No_of_employees int,
+location varchar(35));
+
+
+2) command to insert 5 rows of data in the table 
+
+
+Insert into Bank values(1,'SBI',2456,24,'btm');
+Insert into Bank values(2,'union',2136,12,'jayanagar');
+Insert into Bank values(3,'icici',1286,11,'krpuram');
+Insert into Bank values(4,'karnataka',9437,27,'marthahalli');
+Insert into Bank values(5,'bob',8673,47,'silk board');
+
+
+3) constraints: constraints are the keywords applied for the table columns 
+
+types:
+-> not null : the not null keyword is declared to the columns that the columns should not contain the null value.
+ex : Create table Bank(
+bank_id int not null ,
+bank_name varchar(30),
+bank_code int not null,
+No_of_employees int,
+location varchar(35));
+ CONSTRAINT fk_department FOREIGN KEY (department_id) REFERENCES Department(department_id));
+
+the columns bank_id and bank_code should not contain the null values.
+-> check : the check constraints is used to declare the condition for the columns ,it can be declared for the integer type columns.
+
+Create table Bank(
+eg : bank_id int,
+bank_name varchar(30),
+bank_code int,
+No_of_employees int,
+location varchar(35),
+constraint No_of_employees_chk check(No_of_employees > 20)
+);
+
+-> primary key:  the primary key constraint is declared the table columns the declared column should conatin the different values should not contain the same values and should not contain the duplicate values.
+eg : Create table Bank(
+bank_id int primary key ,
+bank_name varchar(30),
+bank_code int not null,
+No_of_employees int,
+location varchar(35)
+);
+
+-> foreign key : the foreign constraint is used to refer the values from the other table .
+
+
+eg : Create table Bank(
+bank_id int,
+bank_name varchar(30),
+bank_code int not null,
+No_of_employees int,
+location varchar(35),
+CONSTRAINT fk_tablename FOREIGN KEY (column name) REFERENCES Department(column name));
+
+
+
+
+
